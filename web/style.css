@@ -10,8 +10,29 @@ body {
   color: white;
 }
 
+.grey {
+  background-color: #5A424299;
+}
+
 #landing-wrapper {
-  background-color: #000000;
+  background-color: #006873;
   min-width: 100vw;
   min-height: 100vh;
+  display: flex;
+}
+
+#landing-inner-left {
+  height: 100%;
+  width: 50%;
+  background-color: green;
+}
+
+#landing-inner-right{
+  height: 100%;
+  width: 50%;
+}
+
+#projects {
+  width: 100%;
+  height: 100%;
 }
