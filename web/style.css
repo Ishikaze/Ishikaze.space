@@ -36,15 +36,6 @@ body {
   transition: all 0.5s;
 }
 
-#landing-inner-left:hover {
-  width: 90%;
-}
-
-#landing-inner-left:hover ~ #landing-inner-right {
-  width: 20%;
-  opacity: 0.5;
-}
-
 #landing-inner-right {
   height: 100%;
   width: 50%;
@@ -74,6 +65,15 @@ body {
   transition: all 0.25s;
 }
 
+#landing-inner-left:hover {
+  width: 70%;
+}
+
+#landing-inner-left:hover ~ #landing-inner-right {
+  width: 30%;
+  opacity: 0.5;
+}
+
 #contact {
   height: 50%;
   transition: all 1s;
@@ -87,9 +87,25 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+#contact:hover {
+  height: 70%;
+}
+
+#contact:hover ~ #about-me{
+  height: 30%;
+}
+
+#about-me:hover {
+  height: 70%;
+}
+
+#about-me:hover ~ #contact{
+  height: 30%;
+}
+
 #about-me{
   height: 50%;
-  transition: all 1s;
+  transition: all 0.5s;
   padding: 1rem;
   margin: 1rem 2rem 2rem 0;
   background: rgba(255, 255, 255, 0.1);
