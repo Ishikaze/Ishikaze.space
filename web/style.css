@@ -153,5 +153,6 @@ body {
 #about-me:hover {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(//media.tenor.com/G05zLUxXg8MAAAAC/among-us-among-us-sus.gif);
   transition: all 0.5s;
+  background-position: center;
 }
 
