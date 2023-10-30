@@ -33,6 +33,16 @@ body {
   width: 50%;
   position: relative;
   padding: 2rem;
+  transition: all 0.5s;
+}
+
+#landing-inner-left:hover {
+  width: 90%;
+}
+
+#landing-inner-left:hover ~ #landing-inner-right {
+  width: 20%;
+  opacity: 0.5;
 }
 
 #landing-inner-right {
@@ -41,6 +51,8 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  transition: all 0.5s;
+  justify-content: center;
 }
 
 #projects {
@@ -93,3 +105,4 @@ body {
   transform: scale(1.015);
   transition: all 0.25s;
 }
+
