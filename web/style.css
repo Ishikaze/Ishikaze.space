@@ -81,6 +81,12 @@ body {
   backdrop-filter: blur(6.9px);
   -webkit-backdrop-filter: blur(6.9px);
   border: 1px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+}
+
+#projects span{
+  position: absolute;
+  z-index: 99;
 }
 
 #projects:hover{
@@ -88,6 +94,65 @@ body {
   transform: scale(1.015);
   transition: all 0.25s;
   border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.slideshow-container{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  overflow: hidden;
+  z-index: -1;
+  transition: all 0.25s;
+}
+
+#black-box{
+  background-color: rgba(0, 0, 0, 0.226);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.25s;
+}
+
+#black-box:hover {
+  opacity: 0;
+}
+
+#black-box:hover ~ .slideshow-container {
+  opacity: 0;
+}
+
+.slideshow-wrapper{
+  width: 100%;
+  display: flex;
+  animation: slide 16s infinite;
+}
+@keyframes slide{
+  0%{
+      transform: translateX(0);
+  }
+  25%{
+      transform: translateX(-40%);
+  }
+  30%{
+      transform: translateX(-140%);
+  }
+  50%{
+      transform: translateX(-190%);
+  }
+  55%{
+      transform: translateX(-400%);
+  }
+  75%{
+      transform: translateX(-600%);
+  }
+  90% {
+    transform: translateX(0);
+  }
 }
 
 #landing-inner-left:hover {
