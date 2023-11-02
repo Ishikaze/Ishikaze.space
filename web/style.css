@@ -124,6 +124,7 @@ body {
 
 .slideshow-wrapper{
   width: 100%;
+  height: 100%;
   display: flex;
   animation: slide 16s infinite;
 }
@@ -226,5 +227,215 @@ body {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(//media.tenor.com/G05zLUxXg8MAAAAC/among-us-among-us-sus.gif);
   transition: all 0.5s;
   background-position: center;
+}
+
+@media only screen and (max-width: 768px) {
+  #landing-wrapper{
+    flex-direction: column;
+  }
+
+  #landing-inner-left {
+    height: 50%;
+    width: 100%;
+    position: relative;
+    padding: 2rem 2rem 0 2rem;
+    transition: all 0.5s;
+    font-size: 3rem;
+    font-weight: 900;
+  }
+  
+  #landing-inner-left:hover {
+    height: 80%;
+    width: 100%;
+  }
+  
+  #landing-inner-left:hover ~ #landing-inner-right {
+    height: 20%;
+    opacity: 0.5;
+  }
+  
+  #landing-inner-right {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    transition: all 0.5s;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    padding: 0 2rem 4rem 2rem
+  }
+  
+  #landing-inner-right:hover {
+    height: 80%;
+    width: 100%;
+  }
+  
+  #landing-inner-right:hover ~ #landing-inner-left {
+    opacity: 0;
+  }
+  
+  #projects {
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 255, 255, 0);
+    overflow: hidden;
+  }
+  
+  #projects span{
+    position: absolute;
+    z-index: 1;
+  }
+  
+  #projects:hover{
+    background-color: rgba(155, 155, 155, 0.288);
+    transform: scale(1.015);
+    transition: all 0.25s;
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+  
+  .slideshow-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    overflow: hidden;
+    z-index: -1;
+    transition: all 0.25s;
+  }
+  
+  #black-box{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.25s;
+  }
+  
+  #black-box:hover {
+    opacity: 0;
+  }
+  
+  .slideshow-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    animation: slide 16s infinite;
+  }
+  @keyframes slide{
+    0%{
+        transform: translateX(0rem);
+        opacity: 1;
+    }
+    25%{
+        transform: translateX(-2rem);
+        opacity: 1;
+    }
+    30%{
+        transform: translateX(-25rem);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(-28rem);
+        opacity: 1;
+    }
+    55%{
+        transform: translateX(-50rem);
+        opacity: 1;
+    }
+    85%{
+        transform: translateX(-80rem);
+        opacity: 1;
+    }
+    90% {
+      transform: translateX(-80rem);
+      opacity: 0;
+    }
+    95% {
+      transform: translateX(0);
+      opacity: 0;
+    }
+  }
+  
+  #landing-inner-left:hover ~ #landing-inner-right {
+    opacity: 0.5;
+    width: 100%;
+  }
+  
+  #contact {
+    height: 100%;
+    width: 50%;
+    transition: all 1s;
+    padding: 1rem;
+    margin: 2rem 1rem 2rem 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 255, 255, 0);
+    position: relative;
+  }
+  
+  #contact:hover {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #contact:hover ~ #about-me{
+    width: 30%;
+    height: 100%;
+  }
+  
+  #about-me:hover {
+    height: 100%;
+    width: 100%;
+  }
+  
+  #about-me:hover ~ #contact{
+    height: 100%;
+    width: 20%;
+  }
+  
+  #about-me{
+    height: 100%;
+    width: 50%;
+    transition: all 0.5s;
+    padding: 1rem;
+    margin: 2rem 0rem 2rem 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.9px);
+    -webkit-backdrop-filter: blur(6.9px);
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(https://upload.wikimedia.org/wikipedia/commons/5/59/Empty.png?20091205084734);
+  
+  }
+  
+  #contact:hover, #about-me:hover{
+    background-color: rgba(155, 155, 155, 0.288);
+    transform: scale(1.015);
+    transition: all 0.25s;
+    border: 1px solid rgba(255, 255, 255, 1);
+  }
+  
+  #about-me:hover {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(//media.tenor.com/G05zLUxXg8MAAAAC/among-us-among-us-sus.gif);
+    transition: all 0.5s;
+    background-position: center;
+  }
 }
 
