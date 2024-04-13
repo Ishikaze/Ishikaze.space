@@ -18,7 +18,7 @@ body {
     height: auto;
     max-height: 20vh;
     padding: 1rem;
-    background-color: rgb(7, 26, 2);
+    background-color: rgba(7, 26, 2, 0);
     color: white;
     font-family: monospace;
     position: absolute;
