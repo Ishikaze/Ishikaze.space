@@ -1,8 +1,9 @@
 const http = new XMLHttpRequest;
 const debug = document.getElementById('debug')
 const id = '570470307748380673'
+const url = "https://api.lanyard.rest/v1/users/" + id
 let x = 0
-let debugText = ''
+let debugText = '> initializing...'
 
 function onReady(callback) {
     var intervalId = window.setInterval(function () {
@@ -23,17 +24,59 @@ onReady(function () {
 
 
 function refresh() {
-    x = x + 1
-    debugText = '[refreshed ' + x + " times]"
+    http.open("GET", url);
+    http.send();
+    debugText = '' + '\n> refreshing status...'
 
-    document.getElementById('pfp').style.backgroundImage = 'url(https://api.lanyard.rest/' + id + '.webp)'
-    debugText = debugText + '\n url(https://api.lanyard.rest/' + id + '.webp)'
+    http.onload = updateInfo
+
+    x = x + 1
+    debugText = debugText + '\n> [refreshed ' + x + " times]"
 
 };
+
+function updatePfp() {
+    document.getElementById('pfp').src = 'https://api.lanyard.rest/' + id + '.png'
+    debugText = debugText + '\n> PFP update successful : https://api.lanyard.rest/' + id + '.png'
+}
+
+function updateUsername() {
+    const obj = JSON.parse(http.responseText)
+    document.getElementById('username').innerHTML = obj.data.discord_user.global_name
+    debugText = debugText + '\n> global_name update successful : ' + obj.data.discord_user.global_name
+}
+
+function updateInfo() {
+    const obj = JSON.parse(http.responseText)
+    const discordStatus = obj.data.discord_status
+    let simpleStatus = ''
+
+    if (discordStatus !== 'offline') {
+        simpleStatus = 'Online'
+        document.getElementById('statusIndicator').style.backgroundColor = "#ffffff"
+        document.getElementById('statusText').innerHTML = simpleStatus
+    } else {
+        simpleStatus = 'Offline'
+        document.getElementById('statusIndicator').style.backgroundColor = "#000000"
+        document.getElementById('statusText').innerHTML = simpleStatus
+    }
+
+    debugText = debugText + '\n> status update successful : ' + discordStatus + ' [' + simpleStatus + ']'
+}
 
 function updateDebug() {
     debug.innerHTML = debugText
 };
 
-setInterval(refresh, 1000);
-setInterval(updateDebug, 5000);
+window.onload = function () {
+    updatePfp()
+
+    http.open("GET", url);
+    http.send();
+    http.onload = updateUsername
+}
+
+setInterval(refresh, 3000);
+setInterval(updatePfp, 10000);
+setInterval(updateUsername, 6000);
+setInterval(updateDebug, 10);
