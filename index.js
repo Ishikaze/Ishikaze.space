@@ -41,13 +41,14 @@ function updatePfp() {
 }
 
 function updateUsername() {
-    const obj = JSON.parse(http.responseText)
+
+    let obj = JSON.parse(http.responseText)
     document.getElementById('username').innerHTML = obj.data.discord_user.global_name
     debugText = debugText + '\n> global_name update successful : ' + obj.data.discord_user.global_name
 }
 
 function updateInfo() {
-    const obj = JSON.parse(http.responseText)
+    let obj = JSON.parse(http.responseText)
     const discordStatus = obj.data.discord_status
     let simpleStatus = ''
 
@@ -78,5 +79,5 @@ window.onload = function () {
 
 setInterval(refresh, 3000);
 setInterval(updatePfp, 10000);
-setInterval(updateUsername, 6000);
+setInterval(updateUsername, 8000);
 setInterval(updateDebug, 10);
