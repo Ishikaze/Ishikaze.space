@@ -3,3 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.debug {
+    width: 100vw;
+    height: auto;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    position: absolute;
+    bottom: 0;
+}
