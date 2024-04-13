@@ -1,5 +1,6 @@
 const http = new XMLHttpRequest;
 const debug = document.getElementById('debug')
+const id = '570470307748380673'
 let x = 0
 let debugText = ''
 
@@ -17,14 +18,17 @@ function setVisible(selector, visible) {
 }
 
 onReady(function () {
-    setVisible('.page', true);
-    setVisible('.loading', false);
+    document.getElementById('loading').style.opacity = '0'
 });
 
 
 function refresh() {
     x = x + 1
     debugText = '[refreshed ' + x + " times]"
+
+    document.getElementById('pfp').style.backgroundImage = 'url(https://api.lanyard.rest/' + id + '.webp)'
+    debugText = debugText + '\n url(https://api.lanyard.rest/' + id + '.webp)'
+
 };
 
 function updateDebug() {
@@ -32,4 +36,4 @@ function updateDebug() {
 };
 
 setInterval(refresh, 1000);
-setInterval(updateDebug, 1000);
+setInterval(updateDebug, 5000);

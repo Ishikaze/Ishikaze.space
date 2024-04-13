@@ -9,12 +9,35 @@
 </head>
 
 <body>
-    <div class="debug" id="debug">blank</div>
-    <div class="loading">
-        <div class="loader"></div>
-        <p>loading...</p>
+    <div class="debug">
+        <pre id="debug"></pre>
     </div>
-    <div class="page"></div>
+    <div id="loading">
+        <div class="loader-wrapper">
+            <div class="loader"></div>
+        </div>
+    </div>
+    <div class="page">
+        <div class="header">
+            <h1>Ishikaze.space</h1>
+        </div>
+        <div class="mainSection">
+            <div class="profileSection">
+                <div class="pfpContainer">
+                    <div id="pfp"></div>
+                </div>
+                <p id="username">username</p>
+                <div class="statusSection">
+                    <div id="statusIndicator"></div>
+                    <p>loading...</p>
+                </div>
+
+            </div>
+            <div class="bioSection">
+                bio
+            </div>
+        </div>
+    </div>
 </body>
 
 <script src="./index.js"></script>
