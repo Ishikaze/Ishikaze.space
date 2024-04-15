@@ -19,19 +19,18 @@
 
 body {
     background-color: rgb(0, 0, 0);
-    filter: grayscale(1);
 }
 
 .debug {
-    width: 80vw;
-    height: auto;
+    width: auto;
+    height: 1;
     max-height: 20vh;
     padding: 1rem;
     background-color: rgba(7, 26, 2, 0);
     color: white;
     font-family: monospace;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
+    z-index: 99;
 }
 
 #loading {
@@ -136,6 +135,7 @@ h1 {
     width: 60rem;
     min-height: 100vh;
     height: auto;
+    filter: grayscale(1);
 }
 
 .skyContainer {
