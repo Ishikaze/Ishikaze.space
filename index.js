@@ -36,33 +36,47 @@ function refresh() {
 };
 
 function updatePfp() {
-    document.getElementById('pfp').src = 'https://api.lanyard.rest/' + id + '.png'
-    debugText = debugText + '\n> PFP update successful : https://api.lanyard.rest/' + id + '.png'
+    try {
+        document.getElementById('pfp').src = 'https://api.lanyard.rest/' + id + '.png'
+        debugText = debugText + '\n> PFP update successful : https://api.lanyard.rest/' + id + '.png'
+    } catch {
+        debugText = debugText + '\n> PFP update failed'
+    }
+
 }
 
 function updateUsername() {
+    try {
+        let obj = JSON.parse(http.responseText)
+        document.getElementById('username').innerHTML = obj.data.discord_user.global_name
+        debugText = debugText + '\n> global_name update successful : ' + obj.data.discord_user.global_name
+    } catch {
+        debugText = debugText + '\n> global_name update failed'
+    }
 
-    let obj = JSON.parse(http.responseText)
-    document.getElementById('username').innerHTML = obj.data.discord_user.global_name
-    debugText = debugText + '\n> global_name update successful : ' + obj.data.discord_user.global_name
 }
 
 function updateInfo() {
-    let obj = JSON.parse(http.responseText)
-    const discordStatus = obj.data.discord_status
-    let simpleStatus = ''
+    try {
+        let obj = JSON.parse(http.responseText)
+        const discordStatus = obj.data.discord_status
+        let simpleStatus = ''
 
-    if (discordStatus !== 'offline') {
-        simpleStatus = 'Online'
-        document.getElementById('statusIndicator').style.backgroundColor = "#ffffff"
-        document.getElementById('statusText').innerHTML = simpleStatus
-    } else {
-        simpleStatus = 'Offline'
-        document.getElementById('statusIndicator').style.backgroundColor = "#000000"
-        document.getElementById('statusText').innerHTML = simpleStatus
+        if (discordStatus !== 'offline') {
+            simpleStatus = 'Online'
+            document.getElementById('statusIndicator').style.backgroundColor = "#ffffff"
+            document.getElementById('statusText').innerHTML = simpleStatus
+        } else {
+            simpleStatus = 'Offline'
+            document.getElementById('statusIndicator').style.backgroundColor = "#000000"
+            document.getElementById('statusText').innerHTML = simpleStatus
+        }
+
+        debugText = debugText + '\n> status update successful : ' + discordStatus + ' [' + simpleStatus + ']'
+    } catch {
+        debugText = debugText + 'status update failed'
     }
 
-    debugText = debugText + '\n> status update successful : ' + discordStatus + ' [' + simpleStatus + ']'
 }
 
 function updateDebug() {
