@@ -305,8 +305,10 @@ h1 {
 
 .spotifyIcon {
     position: absolute;
+    font-size: 1.5rem;
     right: 0;
     bottom: 0;
+    opacity: 1;
 }
 
 .bioSection {
@@ -338,4 +340,47 @@ h1 {
     top: 0.65rem;
     background: rgb(0, 0, 0);
     background: linear-gradient(90deg, rgba(0, 0, 0, 0) 75%, rgba(255, 255, 255, 1) 100%);
+}
+
+#spotifyContainer {
+    padding-top: 0.75rem;
+    display: none;
+    flex-direction: row;
+    align-items: start;
+}
+
+.spotifyCover {
+    width: 3rem;
+    height: 3rem;
+    margin-right: 0.5rem;
+    background-color: antiquewhite;
+    border: 2px solid white;
+    border-radius: var(--borderRadius);
+    overflow: hidden;
+}
+
+#spotifyCover {
+    width: 100%;
+    height: 100%;
+}
+
+#spotifyTrack {
+    font-size: 2.25rem;
+    margin-bottom: -0.5rem;
+    text-wrap: nowrap;
+}
+
+#spotifyArtist {
+    font-size: 1.5rem;
+    text-wrap: nowrap;
+}
+
+.visualiser {
+    width: 9.8rem;
+    height: 4.5rem;
+    image-rendering: pixelated;
+    position: absolute;
+    top: -0.1rem;
+    left: -0.15rem;
+    z-index: -99;
 }
