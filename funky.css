@@ -54,6 +54,7 @@ body {
     left: 50%;
     transition-property: bottom, left;
     transition-duration: 0.25s;
+    transition-timing-function: ease-out;
     filter: grayscale(1);
 }
 
