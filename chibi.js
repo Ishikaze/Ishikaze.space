@@ -23,6 +23,7 @@ function move() {
 }
 
 function left() {
+    document.getElementById('ishikaze').style.transform = 'scaleX(1.2)'
     face = 'L'
     posX = 30
     setTimeout(resetX, 100)
@@ -34,6 +35,7 @@ function left() {
 }
 
 function right() {
+    document.getElementById('ishikaze').style.transform = 'scaleX(1.2)'
     face = 'R'
     posX = 30
     setTimeout(resetX, 100)
@@ -45,6 +47,7 @@ function right() {
 }
 
 function jump() {
+    eek()
     if (face == 'L') {
         posY = posY - 10
     } else {
@@ -52,7 +55,7 @@ function jump() {
     }
     setTimeout(updateY, 10)
     posX = 100
-    setTimeout(resetX, 100)
+    setTimeout(resetX, 250)
     ishikaze.style.bottom = posX + 'px'
 }
 
@@ -83,19 +86,51 @@ function randomInt(max) {
   }
 
 updateY()
+plink()
 
 function updateDisplay() {
     document.getElementById('displayX').innerHTML = 'x = ' + posY
 }
 
+function squish() {
+    document.getElementById('ishikaze').style.transform = 'scaleX(1.2)'
+}
+
+function eek() {
+    document.getElementById('ishikazeOverlay').style.backgroundImage = 'url(./assets/images/ishi_eek!.png)'
+    setTimeout(eekReset, 500)
+}
+
+function eekReset() {
+    document.getElementById('ishikazeOverlay').style.backgroundImage = 'url(./assets/images/ishi.png)'
+}
+
 function plink() {
-    document.getElementById('ishikaze').style.backgroundImage = 'url(./assets/images/ishi_plink.png)'
-    setTimeout(plinkReset, 100)
+    document.getElementById('ishikazeOverlay').style.backgroundImage = 'url(./assets/images/ishi_plink.png)'
+
+    let blinkTwice = randomInt(4)
+    if (blinkTwice == 0) {
+        setTimeout(plinkAgain, 100)
+    } else {
+        setTimeout(plinkReset, 100)
+    }
+}
+
+function plinkAgain() {
+    document.getElementById('ishikazeOverlay').style.backgroundImage = 'url(./assets/images/ishi.png)'
+    setTimeout(plink, 100)
 }
 
 function plinkReset() {
-    document.getElementById('ishikaze').style.backgroundImage = 'url(./assets/images/ishi.png)'
+    document.getElementById('ishikazeOverlay').style.backgroundImage = 'url(./assets/images/ishi.png)'
+
+    let interval = randomInt(10000)
+    plinkDelay(interval)
 }
 
-document.getElementById('remote').style.display = 'inline'
+function plinkDelay(delay) {
+    setTimeout(plink, delay)
+}
+
+document.getElementById('remote').style.display = 'none'
 setInterval(updateDisplay, 10)

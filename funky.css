@@ -58,6 +58,16 @@ body {
     filter: grayscale(1);
 }
 
+#ishikazeOverlay {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(1);
+}
+
 .debug {
     width: auto;
     height: 1;
