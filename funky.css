@@ -21,6 +21,42 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
+.screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff00;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#remote {
+    width: 10rem;
+    height: auto;
+    background-color: #fff;
+    padding: 1rem;
+    position: absolute;
+    right: 0;
+    bottom: 10%;
+    display: flex;
+}
+
+.chibi {
+    width: 5rem;
+    height: 5rem;
+    position: absolute;
+    background-image: url(./assets/images/ishi.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    bottom: 0%;
+    left: 50%;
+    transition-property: bottom, left;
+    transition-duration: 0.25s;
+    filter: grayscale(1);
+}
+
 .debug {
     width: auto;
     height: 1;
