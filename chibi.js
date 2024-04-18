@@ -1,5 +1,5 @@
 let posX = 0
-let posY = 50
+let posY = randomInt(100)
 let face = 'L'
 const ishikaze = document.getElementById('ishikaze')
 
@@ -71,3 +71,5 @@ function updateFace() {
 function randomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+updateY()
