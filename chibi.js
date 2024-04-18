@@ -44,13 +44,23 @@ function right() {
     updateFace()
 }
 
+function jump() {
+    if (face == 'L') {
+        posY = posY - 10
+    } else {
+        posY = posY + 10
+    }
+    setTimeout(updateY, 10)
+    posX = 100
+    setTimeout(resetX, 100)
+    ishikaze.style.bottom = posX + 'px'
+}
+
 function updateY() {
-    if (posY > 99 || posY < 1) {
-        if (face == 'L') {
-            posY = posY + 2
-        } else {
-            posY = posY - 2
-        }
+    if (posY > 94) {
+        posY = 95
+    } else  if (posY < 1) {
+        posY = 0
     }
     ishikaze.style.left = posY + '%'
 }
@@ -73,3 +83,10 @@ function randomInt(max) {
   }
 
 updateY()
+
+function updateDisplay() {
+    document.getElementById('displayX').innerHTML = 'x = ' + posY
+}
+
+document.getElementById('remote').style.display = 'inline'
+setInterval(updateDisplay, 10)
