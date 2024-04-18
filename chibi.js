@@ -88,5 +88,14 @@ function updateDisplay() {
     document.getElementById('displayX').innerHTML = 'x = ' + posY
 }
 
+function plink() {
+    document.getElementById('ishikaze').style.backgroundImage = 'url(./assets/images/ishi_plink.png)'
+    setTimeout(plinkReset, 100)
+}
+
+function plinkReset() {
+    document.getElementById('ishikaze').style.backgroundImage = 'url(./assets/images/ishi.png)'
+}
+
 document.getElementById('remote').style.display = 'inline'
 setInterval(updateDisplay, 10)
