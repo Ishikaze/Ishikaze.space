@@ -263,8 +263,6 @@ h1 {
     box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
-    filter: grayscale(100%);
-    -webkit-filter: grayscale(100%);
     border-radius: var(--borderRadius) 0 0 var(--borderRadius);
 }
 
@@ -362,7 +360,7 @@ h1 {
 .bioSection {
     width: 80%;
     height: 100%;
-    padding: 2rem;
+    padding: 2rem 1rem 2rem 2rem;
     box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
@@ -376,6 +374,8 @@ h1 {
     border-radius: var(--borderRadius);
     background: rgb(0, 0, 0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(103, 103, 103, 1) 100%);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
 }
 
 .boxHighlight {
@@ -431,4 +431,72 @@ h1 {
     top: -0.1rem;
     left: -0.15rem;
     z-index: -99;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    margin-bottom: -0.5rem;
+    font-size: 3.5rem;
+}
+
+.headerBlock {
+    width: 0.25rem;
+    height: 3rem;
+    background-color: #ffffff;
+    margin-right: 0.75rem;
+    align-self: flex-start;
+}
+
+.gooberBadge {
+    width: 6rem;
+    height: 6rem;
+    background-color: #ffffff;
+    background-image: url(./assets/images/goober.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    transform: rotate(15deg);
+    border: #000 solid 1px;
+    animation: badgeRotate 10s linear 1s infinite;
+}
+
+@keyframes badgeRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+.socials {
+    display: flex;
+    margin-top: 0.5rem;
+}
+
+.socialIcons {
+    margin-right: 1rem;
+}
+
+.boxFlexWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+#support {
+    width: 100%;
+}
+
+.youtubeSection {
+    width: 100%;
+    height: 27rem;
+    padding: 2rem;
+    box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
+    -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
+    -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
+    border-radius: var(--borderRadius);
+    margin: 2rem 0;
 }
