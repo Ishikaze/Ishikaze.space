@@ -190,7 +190,7 @@ h1 {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 20rem;
+    height: 15rem;
 }
 
 .sky {
@@ -249,7 +249,6 @@ h1 {
     width: 100%;
     height: 27rem;
     min-width: 1rem;
-    background-color: rgb(0, 0, 0);
     display: flex;
     flex-direction: row;
     color: white;
@@ -264,6 +263,7 @@ h1 {
     -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     border-radius: var(--borderRadius) 0 0 var(--borderRadius);
+    background-color: rgb(0, 0, 0);
 }
 
 .pfpContainer {
@@ -367,6 +367,7 @@ h1 {
     -webkit-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     -moz-box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 1) inset;
     border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+    background-color: rgb(0, 0, 0);
 }
 
 .boxContainer {
@@ -512,6 +513,10 @@ header {
         width: 90vw;
     }
 
+    .sky {
+        background-size: cover;
+    }
+
     .mainSection {
         width: 90vw;
         height: auto;
@@ -519,7 +524,7 @@ header {
     }
 
     .profileSection {
-        width: 100%;
+        width: 12rem;
         border-radius: var(--borderRadius);
         margin: auto;
         margin-bottom: 1rem;
