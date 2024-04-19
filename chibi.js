@@ -132,7 +132,7 @@ function plinkDelay(delay) {
     setTimeout(plink, delay)
 }
 
-document.getElementById('remote').style.display = 'inline'
+document.getElementById('remote').style.display = 'none'
 setInterval(updateDisplay, 10)
 
 function squishAnim() {
