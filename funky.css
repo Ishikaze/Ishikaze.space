@@ -336,12 +336,14 @@ h1 {
     width: 80%;
     margin: auto;
     background-color: white;
+    position: relative;
 }
 
 .spotifySection {
     width: 100%;
     height: 35%;
     position: relative;
+    margin-top: 0.25rem;
 }
 
 #spotifyPH {
