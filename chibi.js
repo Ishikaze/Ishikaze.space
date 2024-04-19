@@ -50,15 +50,17 @@ function right() {
 
 function jump() {
     eek()
+    document.getElementById('ishikaze').style.transitionDuration = '0.35s'
     if (face == 'L') {
         posY = posY - 10
     } else {
         posY = posY + 10
     }
-    setTimeout(updateY, 10)
+    setTimeout(updateY, 30)
     posX = 100
-    setTimeout(resetX, 250)
+    setTimeout(resetX, 200)
     ishikaze.style.bottom = posX + 'px'
+    setTimeout(squishAnim, 300)
 }
 
 function updateY() {
