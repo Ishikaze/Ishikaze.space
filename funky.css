@@ -405,6 +405,8 @@ h1 {
     border: 2px solid white;
     border-radius: var(--borderRadius);
     overflow: hidden;
+    position: relative;
+    z-index: 1;
 }
 
 #spotifyCover {
@@ -430,7 +432,7 @@ h1 {
     position: absolute;
     top: -0.1rem;
     left: -0.15rem;
-    z-index: -99;
+    z-index: 0;
 }
 
 header {
