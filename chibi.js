@@ -12,18 +12,17 @@ function move() {
     switch (int) {
         case 0:
             left()
-        break;
+            break;
         case 1:
             right()
-        break;
+            break;
         default:
 
-        break;
+            break;
     }
 }
 
 function left() {
-    document.getElementById('ishikaze').style.transform = 'scaleX(1.2)'
     face = 'L'
     posX = 30
     setTimeout(resetX, 100)
@@ -31,7 +30,9 @@ function left() {
     setTimeout(updateY, 10)
     ishikaze.style.bottom = posX + 'px'
 
+
     updateFace()
+    setTimeout(squishAnim, 100)
 }
 
 function right() {
@@ -44,6 +45,7 @@ function right() {
     ishikaze.style.bottom = posX + 'px'
 
     updateFace()
+    setTimeout(squishAnim, 100)
 }
 
 function jump() {
@@ -62,7 +64,7 @@ function jump() {
 function updateY() {
     if (posY > 94) {
         posY = 95
-    } else  if (posY < 1) {
+    } else if (posY < 1) {
         posY = 0
     }
     ishikaze.style.left = posY + '%'
@@ -74,6 +76,8 @@ function resetX() {
 }
 
 function updateFace() {
+    document.getElementById('ishikaze').style.transitionProperty = 'bottom, left'
+    document.getElementById('ishikaze').style.transitionDuration = '0.25s'
     if (face == 'L') {
         ishikaze.style.transform = "scaleX(1)"
     } else {
@@ -83,17 +87,13 @@ function updateFace() {
 
 function randomInt(max) {
     return Math.floor(Math.random() * max);
-  }
+}
 
 updateY()
 plink()
 
 function updateDisplay() {
     document.getElementById('displayX').innerHTML = 'x = ' + posY
-}
-
-function squish() {
-    document.getElementById('ishikaze').style.transform = 'scaleX(1.2)'
 }
 
 function eek() {
@@ -132,5 +132,28 @@ function plinkDelay(delay) {
     setTimeout(plink, delay)
 }
 
-document.getElementById('remote').style.display = 'none'
+document.getElementById('remote').style.display = 'inline'
 setInterval(updateDisplay, 10)
+
+function squishAnim() {
+    if (face == 'L') {
+        document.getElementById('ishikaze').style.transitionProperty = 'bottom, left, transform'
+        document.getElementById('ishikaze').style.transitionDuration = '0.1s'
+        document.getElementById('ishikaze').style.transform = 'scaleX(1.2) scaleY(0.8)'
+        document.getElementById('ishikaze').style.bottom = '-6px'
+        setTimeout(() => {
+            document.getElementById('ishikaze').style.transform = 'scaleX(1) scaleY(1)'
+            document.getElementById('ishikaze').style.bottom = '0px'
+        }, 100)
+    } else {
+        document.getElementById('ishikaze').style.transitionProperty = 'bottom, left, transform'
+        document.getElementById('ishikaze').style.transitionDuration = '0.1s'
+        document.getElementById('ishikaze').style.transform = 'scaleX(-1.2) scaleY(0.8)'
+        document.getElementById('ishikaze').style.bottom = '-6px'
+        setTimeout(() => {
+            document.getElementById('ishikaze').style.transform = 'scaleX(-1) scaleY(1)'
+            document.getElementById('ishikaze').style.bottom = '0px'
+        }, 100)
+    }
+
+}
