@@ -144,7 +144,17 @@ setInterval(updateUsername, 8000);
 setInterval(updateDebug, 10);
 
 var cursor = document.getElementById("cursor");
-document.body.addEventListener("mousemove", function(e) {
-  cursor.style.left = e.clientX + "px",
-    cursor.style.top = e.clientY + "px";
+document.body.addEventListener("mousemove", function (e) {
+    cursor.style.left = e.clientX + "px",
+        cursor.style.top = e.clientY + "px";
 });
+
+function cursorNormal() {
+    document.getElementById('cursor').style.backgroundImage = 'url(./assets/MicroIconPack/ComputerSystems/1.Pointer.png)'
+}
+function cursorHeart() {
+    document.getElementById('cursor').style.backgroundImage = 'url(./assets/MicroIconPack/Social/2.Heart.png)'
+}
+function cursorPointer() {
+    document.getElementById('cursor').style.backgroundImage = 'url(./assets/MicroIconPack/ComputerSystems/2.HandPointer.png)'
+}

@@ -24,19 +24,22 @@ body {
 
 .cursor {
     position: fixed;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-25%) translateY(-25%);
     pointer-events: none;
     left: -100px;
     top: 50%;
-    mix-blend-mode: difference;
-    background-color: transparent;
     z-index: 10000;
-    background-color: #fff;
-    height: 30px;
-    width: 30px;
-    transition: all 0s linear;
+    background-image: url(./assets/MicroIconPack/ComputerSystems/1.Pointer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    image-rendering: pixelated;
+    filter: grayscale(1);
+    height: 2.5rem;
+    width: 2.5rem;
+    transition: all 10ms ease-in-out;
     z-index: 100;
-  }
+}
 
 .screen {
     width: 100vw;
@@ -493,6 +496,7 @@ header {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(359deg);
     }
@@ -572,8 +576,4 @@ header {
     .youtubeSection {
         display: none;
     }
-}
-
-.socialIcons:hover {
-    cursor: pointer;
 }
