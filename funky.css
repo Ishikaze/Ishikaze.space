@@ -19,7 +19,24 @@
 
 body {
     background-color: rgb(0, 0, 0);
+    cursor: none;
 }
+
+.cursor {
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    pointer-events: none;
+    left: -100px;
+    top: 50%;
+    mix-blend-mode: difference;
+    background-color: transparent;
+    z-index: 10000;
+    background-color: #fff;
+    height: 30px;
+    width: 30px;
+    transition: all 0s linear;
+    z-index: 100;
+  }
 
 .screen {
     width: 100vw;
@@ -29,6 +46,7 @@ body {
     top: 0;
     left: 0;
     z-index: 99;
+    pointer-events: none;
 }
 
 #remote {
@@ -56,6 +74,7 @@ body {
     transition-duration: 0.25s;
     transition-timing-function: ease-out;
     filter: grayscale(1);
+    pointer-events: auto;
 }
 
 #ishikazeOverlay {
@@ -553,4 +572,8 @@ header {
     .youtubeSection {
         display: none;
     }
+}
+
+.socialIcons:hover {
+    cursor: pointer;
 }

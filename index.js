@@ -142,3 +142,9 @@ setInterval(refresh, 3000);
 setInterval(updatePfp, 10000);
 setInterval(updateUsername, 8000);
 setInterval(updateDebug, 10);
+
+var cursor = document.getElementById("cursor");
+document.body.addEventListener("mousemove", function(e) {
+  cursor.style.left = e.clientX + "px",
+    cursor.style.top = e.clientY + "px";
+});

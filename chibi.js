@@ -13,7 +13,7 @@ function move() {
         case 0:
             left()
             break;
-        case 1:
+        case 20:
             right()
             break;
         default:
