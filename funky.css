@@ -37,7 +37,7 @@ body {
     filter: grayscale(1);
     height: 2.5rem;
     width: 2.5rem;
-    transition: all 10ms ease-in-out;
+    transition: all 0s linear;
     z-index: 100;
 }
 
